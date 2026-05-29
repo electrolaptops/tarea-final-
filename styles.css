@@ -1,0 +1,505 @@
+/* ==========================================================================
+   HOJA DE ESTILOS FUTURISTA Y TECNOLÓGICA - ELECTROLAPTOPS
+   Diseño Premium con Acentos Cyber-Glow, Efectos Hover y Accesibilidad
+   ========================================================================== */
+
+:root {
+    --bg-dark: #060d1a;
+    --bg-card: #0b1528;
+    --primary-neon: #00f2fe;
+    --secondary-neon: #4facfe;
+    --accent-yellow: #ffcb05;
+    --text-light: #e2e8f0;
+    --text-muted: #94a3b8;
+    --glow-effect: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4 {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+    margin-bottom: 12px;
+}
+
+/* ACCESIBILIDAD: SALTAR AL CONTENIDO PRINCIPAL */
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    background: var(--accent-yellow);
+    color: #060d1a;
+    font-weight: bold;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    z-index: 10000;
+}
+
+.skip-link:focus {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    border: 2px solid var(--primary-neon);
+    border-radius: 4px;
+    box-shadow: var(--glow-effect);
+}
+
+/* ENCABEZADO TECH */
+.main-header {
+    background: linear-gradient(135deg, #020612 0%, #0b1932 100%);
+    color: #ffffff;
+    padding: 25px 0 0 0;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-neon);
+    position: relative;
+    overflow: hidden;
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-neon), var(--accent-yellow), var(--primary-neon));
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.brand-logo {
+    width: 100%;
+    max-width: 260px; /* Logo más ancho según tus indicaciones */
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid var(--primary-neon);
+    padding: 6px;
+    background-color: #ffffff;
+    margin-bottom: 15px;
+    box-shadow: var(--glow-effect);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.brand-logo:hover {
+    transform: scale(1.03) rotate(1deg);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.7);
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: linear-gradient(to right, #fff, var(--primary-neon));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.slogan {
+    color: var(--accent-yellow);
+    font-size: 1.15rem;
+    font-style: italic;
+    margin-bottom: 25px;
+}
+
+/* MENÚ DE NAVEGACIÓN FLEXBOX */
+.main-nav {
+    background-color: rgba(2, 6, 18, 0.85);
+    padding: 12px 0;
+    backdrop-filter: blur(5px);
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    gap: 30px;
+}
+
+.nav-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-neon);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-list a:hover {
+    color: var(--primary-neon);
+    background-color: rgba(0, 242, 254, 0.08);
+}
+
+.nav-list a:hover::after {
+    width: 80%;
+}
+
+.nav-list a.active {
+    background: linear-gradient(90deg, rgba(0,242,254,0.15) 0%, rgba(79,172,254,0.15) 100%);
+    border: 1px solid var(--primary-neon);
+    color: var(--primary-neon);
+}
+
+/* MAQUETACIÓN GENERAL Y SECCIONES */
+main {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.welcome-section {
+    background: var(--bg-card);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 242, 254, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    margin-bottom: 40px;
+}
+
+.welcome-section h2, .page-title h2, .multimedia-section h2 {
+    color: var(--primary-neon);
+    font-size: 1.8rem;
+    border-left: 4px solid var(--accent-yellow);
+    padding-left: 15px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.hero-section {
+    margin-bottom: 45px;
+    text-align: center;
+}
+
+/* IMÁGENES REAJUSTADAS - MODELO DE CAJA EXIGIDO */
+.hero-banner {
+    width: 100%;
+    max-width: 750px; /* Reducido para que no se vea gigantesco */
+    height: auto;
+    border: 3px solid var(--primary-neon);
+    padding: 6px;
+    border-radius: 12px;
+    background-color: #020612;
+    box-shadow: var(--glow-effect);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-banner:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.6);
+}
+
+.info-highlight-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-top: 35px;
+    background: rgba(2, 6, 18, 0.5);
+    padding: 25px;
+    border-radius: 10px;
+    border: 1px solid rgba(255,203,5,0.2);
+}
+
+.featured-image {
+    width: 100%;
+    max-width: 210px; /* Reducido para encajar mejor */
+    height: auto;
+    border: 2px solid var(--accent-yellow);
+    padding: 5px;
+    border-radius: 8px;
+    background: #020612;
+    transition: transform 0.3s ease;
+}
+
+.featured-image:hover {
+    transform: translateY(-5px) scale(1.05);
+}
+
+.text-content h3 {
+    color: var(--accent-yellow);
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+/* SECCIÓN TIKTOK */
+.multimedia-section {
+    text-align: center;
+    background: linear-gradient(180deg, #020612 0%, #0b1528 100%);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(254, 44, 85, 0.2);
+    margin-bottom: 40px;
+}
+
+.tiktok-embed-card {
+    background: #000000;
+    max-width: 420px;
+    margin: 25px auto 0 auto;
+    padding: 35px 20px;
+    border-radius: 12px;
+    border: 2px solid #fe2c55;
+    box-shadow: 0 0 15px rgba(254, 44, 85, 0.3);
+}
+
+.tiktok-btn {
+    display: inline-block;
+    background-color: #fe2c55;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px 28px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.tiktok-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #fe2c55;
+}
+
+/* MAQUETACIÓN CSS GRID (SERVICIOS) */
+.services-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin: 35px 0;
+}
+
+.service-card {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 242, 254, 0.1);
+    border-top: 4px solid var(--primary-neon);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--accent-yellow);
+    box-shadow: var(--glow-effect);
+}
+
+.service-card h3 {
+    color: var(--primary-neon);
+}
+
+.full-width-banner {
+    width: 100%;
+    height: auto;
+    border: 2px solid var(--accent-yellow);
+    padding: 6px;
+    border-radius: 10px;
+    background-color: #020612;
+}
+
+/* TIENDA Y GALERÍA NTH-CHILD */
+.gallery-container {
+    background: var(--bg-card);
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 242, 254, 0.15);
+}
+
+.gallery-item-featured {
+    text-align: center;
+    margin-bottom: 45px;
+    background: rgba(2, 6, 18, 0.6);
+    padding: 30px;
+    border-radius: 12px;
+    border: 2px dashed var(--primary-neon);
+}
+
+/* Solución definitiva para la laptop de baja resolución */
+.gallery-item-featured .gallery-img {
+    width: 100%;
+    max-width: 290px; /* Reducida drásticamente para ocultar pixeles y verse nítida */
+    height: auto;
+    margin: 15px auto;
+    display: block;
+    border: 3px solid #ffffff;
+    padding: 4px;
+    border-radius: 6px;
+}
+
+.product-badge {
+    display: inline-block;
+    background: #28a745;
+    color: #fff;
+    font-weight: bold;
+    padding: 6px 18px;
+    border-radius: 20px;
+}
+
+.image-showcase-flex {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.img-wrapper {
+    flex: 1 1 calc(25% - 25px);
+    min-width: 220px;
+    max-width: 260px;
+    background: rgba(2, 6, 18, 0.4);
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.gallery-img {
+    width: 100%;
+    height: auto;
+    background-color: #020612;
+    padding: 4px;
+}
+
+/* SELECTORES NTH-CHILD REQUERIDOS */
+.image-showcase-flex .img-wrapper:nth-child(odd) .gallery-img {
+    border-radius: 6px;
+    border: 2px solid var(--primary-neon);
+}
+
+.image-showcase-flex .img-wrapper:nth-child(even) .gallery-img {
+    border-radius: 20px;
+    border: 2px solid var(--accent-yellow);
+}
+
+.image-showcase-flex .img-wrapper:nth-child(3) .gallery-img {
+    border-radius: 4px 25px 4px 25px;
+    border: 2px solid #28a745;
+}
+
+.img-caption {
+    font-size: 0.9rem;
+    margin-top: 10px;
+    color: var(--text-muted);
+}
+
+/* BOTÓN DE WHATSAPP FLOTANTE INTERACTIVO */
+.whatsapp-floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #25d366;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 14px 22px;
+    border-radius: 50px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9999;
+    box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+    border: 2px solid #ffffff;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.whatsapp-floating-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 0 25px rgba(37, 211, 102, 0.8);
+}
+
+.whatsapp-icon-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: inline-block;
+    animation: pulseGlow 1.5s infinite alternate;
+}
+
+@keyframes pulseGlow {
+    from { transform: scale(0.8); opacity: 0.5; }
+    to { transform: scale(1.3); opacity: 1; }
+}
+
+/* PIE DE PÁGINA */
+.main-footer {
+    background-color: #020612;
+    color: var(--text-light);
+    padding: 40px 20px 25px 20px;
+    margin-top: 70px;
+    border-top: 3px solid var(--accent-yellow);
+}
+
+.footer-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.footer-info h4 {
+    color: var(--accent-yellow);
+}
+
+.footer-info p {
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.footer-chip {
+    width: 95px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border: 2px solid var(--primary-neon);
+    border-radius: 8px;
+    background: #fff;
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .services-grid-container { grid-template-columns: 1fr; }
+    .info-highlight-box { flex-direction: column; text-align: center; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; }
+    .nav-list { gap: 15px; }
+}
